@@ -16,7 +16,7 @@ class Scheduler:
             minute = date_info['minute'],)
         self.memory.append((date, content_info))
         self.sort()
-        self.next_plan = self.next()
+        self.next()
 
     def __call__(self): # Return remain plans
         return len(self.memory)
@@ -25,7 +25,7 @@ class Scheduler:
         self.memory.sort(key=lambda data: data[0])
     
     def next(self):
-        return self.memory[0][0]
+        self.next_plan = self.memory[0][0]
     
     def update(self): # Clean memory
         now = datetime.datetime.now()
@@ -34,12 +34,17 @@ class Scheduler:
             self.sort()
             self.next()
 
-
-
 class Cache:
     def __init__(self, addr):
         self.addr = addr
         self.scheduler = Scheduler()
         if os.path.isfile(self.addr):
             with open(self.addr,'rb') as file:
-                self.data = pickle.load(file)
+                self.scheduler = pickle.load(file)
+    
+    def __call__(self):
+        return self.scheduler
+    
+    def save(self):
+        with open(self.addr, 'wb') as file:
+            pickle.dump(self.scheduler, file)

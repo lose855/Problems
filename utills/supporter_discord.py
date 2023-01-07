@@ -50,7 +50,7 @@ async def make_plan(ctx, msg):
             con.commit()
             cur.close()
             con.close()
-            await ctx.send('Make a plan!')
+            await ctx.send('ok!')
 
         elif len(date) == 3:
             now = datetime.datetime.now()
@@ -59,7 +59,7 @@ async def make_plan(ctx, msg):
             con.commit()
             cur.close()
             con.close()
-            await ctx.send('Make a plan!')
+            await ctx.send('ok!')
         else:
             await ctx.send('You can see the help : /make_plan')
     else:
