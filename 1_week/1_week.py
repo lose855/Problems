@@ -53,3 +53,37 @@ if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
     print(1)
 else:
     print(0)
+
+# Given a natural number N, write a program that prints the numbers 1 through N, one per line.
+
+n = int(input())
+for i in range(1, n+1):
+    print(i)
+
+# Given an integer N greater than or equal to 0. At this time, write a program that outputs N!
+
+n = int(input())
+result = 1
+if n > 0:
+    for i in range(1, n+1):
+        result = result * i
+print(result)
+
+# Write a program that takes two integers A and B as input and outputs A+B.
+
+n = int(input())
+for i in range(n):
+    a, b = map(int, input().split())
+    print(a + b)
+
+# Write a program that takes two integers A and B as input and outputs A+B.
+while True:
+    a, b = map(int, input().split())
+    if a == 0 and b == 0:
+        break
+    print(a + b)
+
+# Write a program that receives N as input and outputs the N multiplication table. You have to print according to the output format.
+n = int(input())
+for i in range(1, 10):
+    print(n, '*', i, '=', n * i)
