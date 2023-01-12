@@ -87,3 +87,29 @@ while True:
 n = int(input())
 for i in range(1, 10):
     print(n, '*', i, '=', n * i)
+
+# 1 star on the first line, 2 stars on the second line, and N stars on the Nth line.
+n = int(input())
+for i in range(1, n + 1):
+    print('*' * i)
+
+# Write a program that takes two integers A and B as input and outputs A+B.
+while True:
+    try:
+        a, b = map(int, input().split())
+        print(a + b)
+    except:
+        break
+
+# Given a sequence A of N integers and an integer X. At this time, write a program that prints all numbers from A to X that are less than X.
+n, x = map(int, input().split())
+array = map(int, input().split())
+for i in array:
+    if i < x:
+        print(i, end=' ')
+
+# Write a program to find how many integers v are given a total of N integers.
+n = int(input())
+array = [int(i) for i in input().split()][:n]
+v = int(input())
+print(array.count(v))
