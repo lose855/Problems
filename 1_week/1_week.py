@@ -113,3 +113,26 @@ n = int(input())
 array = [int(i) for i in input().split()][:n]
 v = int(input())
 print(array.count(v))
+
+# Write a program to find the attendance numbers of 2 students who did not submit the special assignment assigned by the professor among 28 students.
+students = list(range(1, 31))
+for i in range(28):
+    student = int(input())
+    del students[students.find(student)]
+for student in students:
+    print(student)
+
+# Given two matrices A and B of size N*M, write a program that adds two matrices.
+x, y = map(int, input().split())
+array = [[] for i in range(2)]
+for count in range(2):
+    for i in range(x):
+        array[count].append([int(i) for i in input().split()])
+for c in range(x):
+    for r in range(y):
+        print(array[0][c][r] + array[1][c][r], end=' ')
+    print()
+
+# Write a program that outputs the ASCII code value of the given letter when one of the lowercase letters, uppercase letters, and numbers 0-9 is given.
+s = ord(input())
+print(s)
